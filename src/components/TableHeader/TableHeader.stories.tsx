@@ -1,0 +1,38 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { TableHeader } from './TableHeader';
+
+
+const meta: Meta<typeof TableHeader> = {
+  title: 'Components/TableHeader',
+  component: TableHeader,
+  tags: ['autodocs'],
+  parameters: { layout: 'padded' },
+  argTypes: { backgroundColor: { control: 'color' }, textColor: { control: 'color' }, disabled: { control: 'boolean' } },
+};
+export default meta;
+
+type Story = StoryObj<typeof TableHeader>;
+
+/** Default (enabled) state. Use the Controls panel to change text and colours. */
+export const Default: Story = {
+  args: { backgroundColor: '#f5f5f5', textColor: '#222222', disabled: false },
+  render: (args) => (
+    <table style={{ width: '100%' }}>
+      <TableHeader {...args}>
+        <tr><th>Column A</th><th>Column B</th></tr>
+      </TableHeader>
+    </table>
+  ),
+};
+
+/** Disabled state: greyed out and the cursor shows "not-allowed". */
+export const Disabled: Story = {
+  args: { ...Default.args, disabled: true },
+  render: (args) => (
+    <table style={{ width: '100%' }}>
+      <TableHeader {...args}>
+        <tr><th>Column A</th><th>Column B</th></tr>
+      </TableHeader>
+    </table>
+  ),
+};
