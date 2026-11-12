@@ -3,7 +3,11 @@ import styled, { css } from 'styled-components';
 import { TableFooterProps } from './TableFooter.types';
 import { colors, disabledCss } from '../../theme';
 
-const StyledTableFooter = styled.tfoot<{ $bg: string; $color: string; $disabled: boolean }>`
+const StyledTableFooter = styled.tfoot<{
+  $bg: string;
+  $color: string;
+  $disabled: boolean;
+}>`
   ${(p) =>
     p.$disabled
       ? disabledCss

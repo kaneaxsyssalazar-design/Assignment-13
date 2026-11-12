@@ -1,13 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { TableRow } from './TableRow';
 
-
 const meta: Meta<typeof TableRow> = {
   title: 'Components/TableRow',
   component: TableRow,
   tags: ['autodocs'],
   parameters: { layout: 'padded' },
-  argTypes: { backgroundColor: { control: 'color' }, textColor: { control: 'color' }, disabled: { control: 'boolean' } },
+  argTypes: {
+    backgroundColor: { control: 'color' },
+    textColor: { control: 'color' },
+    disabled: { control: 'boolean' },
+  },
 };
 export default meta;
 

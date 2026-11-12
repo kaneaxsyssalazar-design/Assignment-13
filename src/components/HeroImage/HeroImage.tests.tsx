@@ -11,10 +11,14 @@ describe('HeroImage', () => {
 
   test('background color changes when disabled', () => {
     const { rerender } = render(<HeroImage backgroundColor="#ff0000" />);
-    expect(screen.getByTestId('hero-image')).toHaveStyle('background-color: #ff0000');
+    expect(screen.getByTestId('hero-image')).toHaveStyle(
+      'background-color: #ff0000'
+    );
 
     rerender(<HeroImage backgroundColor="#ff0000" disabled />);
-    expect(screen.getByTestId('hero-image')).toHaveStyle('background-color: #cccccc');
+    expect(screen.getByTestId('hero-image')).toHaveStyle(
+      'background-color: #cccccc'
+    );
   });
 
   test('uses not-allowed cursor when disabled', () => {

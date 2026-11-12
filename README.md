@@ -10,13 +10,13 @@ Button, Label, Text, Table, TableHeader, TableRow, TableCell, TableFooter, Dropd
 
 Each folder in `src/components/<Name>/` contains:
 
-| File | Purpose |
-|---|---|
-| `<Name>.tsx` | The styled component |
-| `<Name>.types.tsx` | TypeScript props interface |
+| File                 | Purpose                                               |
+| -------------------- | ----------------------------------------------------- |
+| `<Name>.tsx`         | The styled component                                  |
+| `<Name>.types.tsx`   | TypeScript props interface                            |
 | `<Name>.stories.tsx` | Storybook stories (Default + Disabled, with Controls) |
-| `<Name>.tests.tsx` | Jest / React Testing Library tests |
-| `index.ts` | Re-exports the component and its types |
+| `<Name>.tests.tsx`   | Jest / React Testing Library tests                    |
+| `index.ts`           | Re-exports the component and its types                |
 
 Shared colours, the disabled style and the breakpoint live in `src/theme.ts`.
 
@@ -26,7 +26,7 @@ Shared colours, the disabled style and the breakpoint live in `src/theme.ts`.
 2. **Install styling and test tools:** `styled-components`, `jest-styled-components`, `@testing-library/react`, `@testing-library/jest-dom`.
 3. **Add Storybook 8** with the Create React App preset (`@storybook/react-webpack5`, `@storybook/preset-create-react-app`, addon-essentials). Config is in `.storybook/`. `ajv@8` is added as a dev dependency to fix a known dependency clash between Create React App and Storybook's webpack.
 4. **Build each component** with styled-components. Each takes props for text and colours plus a `disabled` prop. Disabled components use the shared `disabledCss` (grey background `#cccccc`, grey text, `cursor: not-allowed`). Responsiveness comes from fluid widths and a `@media (max-width: 600px)` rule in each component.
-5. **Write stories** with `argTypes` so the Storybook **Controls** panel can change text, background colour and the disabled flag. Every component has a *Default* and a *Disabled* story.
+5. **Write stories** with `argTypes` so the Storybook **Controls** panel can change text, background colour and the disabled flag. Every component has a _Default_ and a _Disabled_ story.
 6. **Write tests.** Every component has tests that check it is visible, that its background colour changes to `#cccccc` when disabled, and that the cursor is `not-allowed` when disabled. Test files end in `.tests.tsx`, so the `test` scripts pass `--testMatch "**/src/**/*.tests.tsx"` to Jest.
 7. **Showcase app:** `src/App.tsx` renders every component in default and disabled states.
 8. **Dockerize:** a two-stage `Dockerfile` runs `npm run build` in a Node image, then copies the build into an nginx image that listens on port 8083.
@@ -79,15 +79,15 @@ docker rm -f salazar_kane_coding_assignment12              # stop and remove
 
 ## Verifying the requirements
 
-| Requirement | How to check |
-|---|---|
-| 13 components, 5 files each | `ls src/components/*` |
-| styled-components | `styled.*` usage in each `<Name>.tsx` |
-| Responsive | Resize the browser at http://localhost:8083 (breakpoint 600px) |
-| Controls for text and background colour | Storybook → component → Controls panel |
-| Default + disabled state, greyed out, `not-allowed` cursor | Storybook *Default* / *Disabled* stories |
-| At least 2 tests per component | `npm run test:ci` |
-| Docker: production build, container name, working dir | `docker ps`, `docker exec ... pwd` |
+| Requirement                                                | How to check                                                   |
+| ---------------------------------------------------------- | -------------------------------------------------------------- |
+| 13 components, 5 files each                                | `ls src/components/*`                                          |
+| styled-components                                          | `styled.*` usage in each `<Name>.tsx`                          |
+| Responsive                                                 | Resize the browser at http://localhost:8083 (breakpoint 600px) |
+| Controls for text and background colour                    | Storybook → component → Controls panel                         |
+| Default + disabled state, greyed out, `not-allowed` cursor | Storybook _Default_ / _Disabled_ stories                       |
+| At least 2 tests per component                             | `npm run test:ci`                                              |
+| Docker: production build, container name, working dir      | `docker ps`, `docker exec ... pwd`                             |
 
 ## Troubleshooting
 

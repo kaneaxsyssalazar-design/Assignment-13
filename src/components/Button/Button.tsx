@@ -3,7 +3,11 @@ import styled, { css } from 'styled-components';
 import { ButtonProps } from './Button.types';
 import { breakpoints, colors, disabledCss } from '../../theme';
 
-const StyledButton = styled.button<{ $bg: string; $color: string; $disabled: boolean }>`
+const StyledButton = styled.button<{
+  $bg: string;
+  $color: string;
+  $disabled: boolean;
+}>`
   padding: 0.6rem 1.4rem;
   font-size: 1rem;
   border: none;
@@ -15,7 +19,10 @@ const StyledButton = styled.button<{ $bg: string; $color: string; $disabled: boo
           background-color: ${p.$bg};
           color: ${p.$color};
           cursor: pointer;
-          transition: transform 0.05s, filter 0.15s, box-shadow 0.15s;
+          transition:
+            transform 0.05s,
+            filter 0.15s,
+            box-shadow 0.15s;
           &:hover {
             filter: brightness(1.1);
           }

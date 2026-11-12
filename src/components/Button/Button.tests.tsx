@@ -11,10 +11,14 @@ describe('Button', () => {
 
   test('background color changes when disabled', () => {
     const { rerender } = render(<Button backgroundColor="#ff0000" />);
-    expect(screen.getByTestId('button')).toHaveStyle('background-color: #ff0000');
+    expect(screen.getByTestId('button')).toHaveStyle(
+      'background-color: #ff0000'
+    );
 
     rerender(<Button backgroundColor="#ff0000" disabled />);
-    expect(screen.getByTestId('button')).toHaveStyle('background-color: #cccccc');
+    expect(screen.getByTestId('button')).toHaveStyle(
+      'background-color: #cccccc'
+    );
   });
 
   test('uses not-allowed cursor when disabled', () => {

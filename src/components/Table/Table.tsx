@@ -8,7 +8,11 @@ const Wrapper = styled.div`
   overflow-x: auto; /* responsive: scroll horizontally on small screens */
 `;
 
-const StyledTable = styled.table<{ $bg: string; $color: string; $disabled: boolean }>`
+const StyledTable = styled.table<{
+  $bg: string;
+  $color: string;
+  $disabled: boolean;
+}>`
   width: 100%;
   border-collapse: collapse;
   ${(p) =>

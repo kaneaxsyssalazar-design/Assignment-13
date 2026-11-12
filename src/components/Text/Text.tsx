@@ -3,7 +3,11 @@ import styled, { css } from 'styled-components';
 import { TextProps } from './Text.types';
 import { breakpoints, colors, disabledCss } from '../../theme';
 
-const StyledText = styled.p<{ $bg: string; $color: string; $disabled: boolean }>`
+const StyledText = styled.p<{
+  $bg: string;
+  $color: string;
+  $disabled: boolean;
+}>`
   margin: 0;
   padding: 0.5rem;
   font-size: 1rem;

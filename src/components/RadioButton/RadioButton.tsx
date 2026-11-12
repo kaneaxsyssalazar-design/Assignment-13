@@ -3,7 +3,11 @@ import styled, { css } from 'styled-components';
 import { RadioButtonProps } from './RadioButton.types';
 import { breakpoints, colors, disabledCss } from '../../theme';
 
-const Wrapper = styled.label<{ $bg: string; $color: string; $disabled: boolean }>`
+const Wrapper = styled.label<{
+  $bg: string;
+  $color: string;
+  $disabled: boolean;
+}>`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;

@@ -1,13 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { TableFooter } from './TableFooter';
 
-
 const meta: Meta<typeof TableFooter> = {
   title: 'Components/TableFooter',
   component: TableFooter,
   tags: ['autodocs'],
   parameters: { layout: 'padded' },
-  argTypes: { backgroundColor: { control: 'color' }, textColor: { control: 'color' }, disabled: { control: 'boolean' } },
+  argTypes: {
+    backgroundColor: { control: 'color' },
+    textColor: { control: 'color' },
+    disabled: { control: 'boolean' },
+  },
 };
 export default meta;
 
@@ -19,7 +22,10 @@ export const Default: Story = {
   render: (args) => (
     <table style={{ width: '100%' }}>
       <TableFooter {...args}>
-        <tr><td>Total</td><td>42</td></tr>
+        <tr>
+          <td>Total</td>
+          <td>42</td>
+        </tr>
       </TableFooter>
     </table>
   ),
@@ -31,7 +37,10 @@ export const Disabled: Story = {
   render: (args) => (
     <table style={{ width: '100%' }}>
       <TableFooter {...args}>
-        <tr><td>Total</td><td>42</td></tr>
+        <tr>
+          <td>Total</td>
+          <td>42</td>
+        </tr>
       </TableFooter>
     </table>
   ),

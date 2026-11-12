@@ -10,7 +10,11 @@ const meta: Meta<typeof Table> = {
   component: Table,
   tags: ['autodocs'],
   parameters: { layout: 'padded' },
-  argTypes: { backgroundColor: { control: 'color' }, textColor: { control: 'color' }, disabled: { control: 'boolean' } },
+  argTypes: {
+    backgroundColor: { control: 'color' },
+    textColor: { control: 'color' },
+    disabled: { control: 'boolean' },
+  },
 };
 export default meta;
 
@@ -23,8 +27,12 @@ export const Default: Story = {
     <Table {...args}>
       <TableHeader disabled={args.disabled}>
         <TableRow disabled={args.disabled}>
-          <TableCell as="th" disabled={args.disabled}>Name</TableCell>
-          <TableCell as="th" disabled={args.disabled}>Role</TableCell>
+          <TableCell as="th" disabled={args.disabled}>
+            Name
+          </TableCell>
+          <TableCell as="th" disabled={args.disabled}>
+            Role
+          </TableCell>
         </TableRow>
       </TableHeader>
       <tbody>
@@ -35,7 +43,9 @@ export const Default: Story = {
       </tbody>
       <TableFooter disabled={args.disabled}>
         <TableRow disabled={args.disabled}>
-          <TableCell colSpan={2} disabled={args.disabled}>1 row</TableCell>
+          <TableCell colSpan={2} disabled={args.disabled}>
+            1 row
+          </TableCell>
         </TableRow>
       </TableFooter>
     </Table>
@@ -49,8 +59,12 @@ export const Disabled: Story = {
     <Table {...args}>
       <TableHeader disabled={args.disabled}>
         <TableRow disabled={args.disabled}>
-          <TableCell as="th" disabled={args.disabled}>Name</TableCell>
-          <TableCell as="th" disabled={args.disabled}>Role</TableCell>
+          <TableCell as="th" disabled={args.disabled}>
+            Name
+          </TableCell>
+          <TableCell as="th" disabled={args.disabled}>
+            Role
+          </TableCell>
         </TableRow>
       </TableHeader>
       <tbody>
@@ -61,7 +75,9 @@ export const Disabled: Story = {
       </tbody>
       <TableFooter disabled={args.disabled}>
         <TableRow disabled={args.disabled}>
-          <TableCell colSpan={2} disabled={args.disabled}>1 row</TableCell>
+          <TableCell colSpan={2} disabled={args.disabled}>
+            1 row
+          </TableCell>
         </TableRow>
       </TableFooter>
     </Table>

@@ -11,10 +11,14 @@ describe('Label', () => {
 
   test('background color changes when disabled', () => {
     const { rerender } = render(<Label backgroundColor="#ff0000" />);
-    expect(screen.getByTestId('label')).toHaveStyle('background-color: #ff0000');
+    expect(screen.getByTestId('label')).toHaveStyle(
+      'background-color: #ff0000'
+    );
 
     rerender(<Label backgroundColor="#ff0000" disabled />);
-    expect(screen.getByTestId('label')).toHaveStyle('background-color: #cccccc');
+    expect(screen.getByTestId('label')).toHaveStyle(
+      'background-color: #cccccc'
+    );
   });
 
   test('uses not-allowed cursor when disabled', () => {

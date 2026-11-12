@@ -3,7 +3,11 @@ import styled, { css } from 'styled-components';
 import { LabelProps } from './Label.types';
 import { breakpoints, colors, disabledCss } from '../../theme';
 
-const StyledLabel = styled.label<{ $bg: string; $color: string; $disabled: boolean }>`
+const StyledLabel = styled.label<{
+  $bg: string;
+  $color: string;
+  $disabled: boolean;
+}>`
   display: inline-block;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;

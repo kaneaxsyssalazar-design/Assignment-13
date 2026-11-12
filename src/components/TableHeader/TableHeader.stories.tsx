@@ -1,13 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { TableHeader } from './TableHeader';
 
-
 const meta: Meta<typeof TableHeader> = {
   title: 'Components/TableHeader',
   component: TableHeader,
   tags: ['autodocs'],
   parameters: { layout: 'padded' },
-  argTypes: { backgroundColor: { control: 'color' }, textColor: { control: 'color' }, disabled: { control: 'boolean' } },
+  argTypes: {
+    backgroundColor: { control: 'color' },
+    textColor: { control: 'color' },
+    disabled: { control: 'boolean' },
+  },
 };
 export default meta;
 
@@ -19,7 +22,10 @@ export const Default: Story = {
   render: (args) => (
     <table style={{ width: '100%' }}>
       <TableHeader {...args}>
-        <tr><th>Column A</th><th>Column B</th></tr>
+        <tr>
+          <th>Column A</th>
+          <th>Column B</th>
+        </tr>
       </TableHeader>
     </table>
   ),
@@ -31,7 +37,10 @@ export const Disabled: Story = {
   render: (args) => (
     <table style={{ width: '100%' }}>
       <TableHeader {...args}>
-        <tr><th>Column A</th><th>Column B</th></tr>
+        <tr>
+          <th>Column A</th>
+          <th>Column B</th>
+        </tr>
       </TableHeader>
     </table>
   ),

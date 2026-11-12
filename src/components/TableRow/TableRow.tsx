@@ -3,7 +3,11 @@ import styled, { css } from 'styled-components';
 import { TableRowProps } from './TableRow.types';
 import { colors, disabledCss } from '../../theme';
 
-const StyledTableRow = styled.tr<{ $bg: string; $color: string; $disabled: boolean }>`
+const StyledTableRow = styled.tr<{
+  $bg: string;
+  $color: string;
+  $disabled: boolean;
+}>`
   ${(p) =>
     p.$disabled
       ? disabledCss

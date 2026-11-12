@@ -3,7 +3,11 @@ import styled, { css } from 'styled-components';
 import { TableCellProps } from './TableCell.types';
 import { breakpoints, colors, disabledCss } from '../../theme';
 
-const StyledTableCell = styled.td<{ $bg: string; $color: string; $disabled: boolean }>`
+const StyledTableCell = styled.td<{
+  $bg: string;
+  $color: string;
+  $disabled: boolean;
+}>`
   padding: 0.6rem 0.8rem;
   border: 1px solid ${colors.border};
   text-align: left;

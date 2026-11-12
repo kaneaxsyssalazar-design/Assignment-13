@@ -3,7 +3,11 @@ import styled, { css } from 'styled-components';
 import { CardProps } from './Card.types';
 import { breakpoints, colors, disabledCss } from '../../theme';
 
-const StyledCard = styled.div<{ $bg: string; $color: string; $disabled: boolean }>`
+const StyledCard = styled.div<{
+  $bg: string;
+  $color: string;
+  $disabled: boolean;
+}>`
   width: 100%;
   max-width: 320px;
   border: 1px solid ${colors.border};
@@ -55,7 +59,9 @@ export const Card: React.FC<CardProps> = ({
     aria-disabled={disabled}
     {...rest}
   >
-    {imageSrc && <img src={imageSrc.trim()} alt={title} referrerPolicy="no-referrer" />}
+    {imageSrc && (
+      <img src={imageSrc.trim()} alt={title} referrerPolicy="no-referrer" />
+    )}
     <div className="card-body">
       <h3>{title}</h3>
       <p>{children ?? content}</p>

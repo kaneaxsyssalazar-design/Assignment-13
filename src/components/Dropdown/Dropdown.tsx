@@ -3,7 +3,11 @@ import styled, { css } from 'styled-components';
 import { DropdownProps } from './Dropdown.types';
 import { breakpoints, colors, disabledCss } from '../../theme';
 
-const StyledSelect = styled.select<{ $bg: string; $color: string; $disabled: boolean }>`
+const StyledSelect = styled.select<{
+  $bg: string;
+  $color: string;
+  $disabled: boolean;
+}>`
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
   border: 1px solid ${colors.border};

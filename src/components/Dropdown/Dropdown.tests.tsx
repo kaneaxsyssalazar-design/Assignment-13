@@ -11,10 +11,14 @@ describe('Dropdown', () => {
 
   test('background color changes when disabled', () => {
     const { rerender } = render(<Dropdown backgroundColor="#ff0000" />);
-    expect(screen.getByTestId('dropdown')).toHaveStyle('background-color: #ff0000');
+    expect(screen.getByTestId('dropdown')).toHaveStyle(
+      'background-color: #ff0000'
+    );
 
     rerender(<Dropdown backgroundColor="#ff0000" disabled />);
-    expect(screen.getByTestId('dropdown')).toHaveStyle('background-color: #cccccc');
+    expect(screen.getByTestId('dropdown')).toHaveStyle(
+      'background-color: #cccccc'
+    );
   });
 
   test('uses not-allowed cursor when disabled', () => {

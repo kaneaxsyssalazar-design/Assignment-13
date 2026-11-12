@@ -1,6 +1,9 @@
 import { HTMLAttributes } from 'react';
 
-export interface CardProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
+export interface CardProps extends Omit<
+  HTMLAttributes<HTMLDivElement>,
+  'title'
+> {
   title?: string;
   content?: string;
   imageSrc?: string;

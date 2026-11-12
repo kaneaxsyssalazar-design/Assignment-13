@@ -27,7 +27,7 @@
     "@storybook/test": "^8.6.0",
     "ajv": "^8.20.0",
     "eslint-config-prettier": "^10.1.8",
-    "prettier": "^3.10.0",
+    "prettier": "^3.10.1",
     "storybook": "^8.6.0",
     "webpack": "^5.90.0"
   },

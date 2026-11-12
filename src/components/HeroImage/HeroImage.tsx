@@ -1,9 +1,19 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { HeroImageProps } from './HeroImage.types';
-import { breakpoints, colors, disabledCss, placeholderImage } from '../../theme';
+import {
+  breakpoints,
+  colors,
+  disabledCss,
+  placeholderImage,
+} from '../../theme';
 
-const Hero = styled.div<{ $bg: string; $color: string; $image: string; $disabled: boolean }>`
+const Hero = styled.div<{
+  $bg: string;
+  $color: string;
+  $image: string;
+  $disabled: boolean;
+}>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,8 +47,12 @@ const Hero = styled.div<{ $bg: string; $color: string; $image: string; $disabled
   @media (max-width: ${breakpoints.mobile}) {
     min-height: 200px;
     padding: 1rem;
-    h1 { font-size: 1.6rem; }
-    p { font-size: 1rem; }
+    h1 {
+      font-size: 1.6rem;
+    }
+    p {
+      font-size: 1rem;
+    }
   }
 `;
 
