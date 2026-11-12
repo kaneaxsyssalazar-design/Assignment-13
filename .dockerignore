@@ -2,5 +2,3 @@ node_modules
 build
 storybook-static
 .git
-Dockerfile
-README.md
