@@ -48,38 +48,18 @@ docker exec salazar_kane_coding_assignment13 pwd
 docker rm -f salazar_kane_coding_assignment13
 ```
 
-![Component library running at localhost:8018](screenshots/localhost-8018.png)
-
-![docker ps and working directory](screenshots/docker-ps.png)
-
 ## Husky pre-commit checks
 
 Husky runs `npm run check` before every commit (`.husky/pre-commit`). The commit is rejected if any of these fail:
 
-1. Prettier
-2. ESLint
-3. The Jest tests
+1. Prettier (`npm run format:check`)
+2. ESLint (`npm run lint`)
+3. The Jest tests (`npm run test:ci`)
 
-Each screenshot below shows a commit being blocked.
-
-**Prettier failure** (badly formatted code):
-
-![Prettier failure](screenshots/husky-prettier-fail.png)
-
-**ESLint failure** (unused variable):
-
-![ESLint failure](screenshots/husky-eslint-fail.png)
-
-**Test failure** (a broken assertion):
-
-![Test failure](screenshots/husky-tests-fail.png)
+To see it work, add badly formatted code such as `const   x=1;` to a file in `src`, then run `git add -A` and `git commit -m "test"`. Husky runs the checks, Prettier fails, and the commit is rejected. The same happens for an ESLint error (for example an unused variable) or a failing test. Undo the change with `git restore --staged .` and `git restore .`.
 
 ## GitHub Actions
 
-The workflow `.github/workflows/code-quality.yml` runs on every push and pull request to `main`. It installs dependencies with `npm ci`, then runs Prettier, ESLint, the tests and a production build. If any step fails, the run is marked failed and GitHub emails the committer.
+The workflow `.github/workflows/code-quality.yml` runs on every push and pull request to `main`. It installs dependencies with `npm ci --legacy-peer-deps`, then runs Prettier, ESLint, the tests and a production build. If any step fails, the run is marked failed and GitHub emails the committer.
 
-To demonstrate it, I bypassed the local hook with `git commit --no-verify` and pushed badly formatted code. The Prettier step failed:
-
-![Failed run](screenshots/actions-red.png)
-
-After
+If the local hook is bypassed (for example with `git commit --no-verify`), the same checks still run
